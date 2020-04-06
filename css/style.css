@@ -1,0 +1,154 @@
+:root {
+  --font: Inter, arial, helvetica, sans-serif;
+  --font-var: Inter Var, arial, helvetica, sans-serif;
+  --font-serif: Merriweather, Georgia, Times, "Times New Roman", serif;
+
+  --fs-title: 36px;
+  --fs-heading: 21px;
+  --fs-normal: 16px;
+  --fs-detail: 14px;
+
+  --color-accent: #4d5061;
+  --color-white: #ffffff;
+  --color-danger: #f16050;
+}
+
+html {
+  font-family: var(--font);
+}
+
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: var(--font-var);
+  }
+}
+
+/* Header */
+
+.page-header {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  padding: 12px 24px 12px 24px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo img {
+  height: 36px;
+}
+
+.nav-links {
+  list-style-type: none;
+  display: block;
+}
+
+.nav__link {
+  display: inline-block;
+  margin: 0 8px;
+}
+
+.nav__link a {
+  color: var(--color-white);
+  text-decoration: none;
+  transition: font-weight 0.1s ease;
+}
+
+.nav__link a:hover {
+  font-weight: bold;
+}
+
+.page-title {
+  text-align: center;
+  font-weight: normal;
+  margin:0 0 4px 0;
+  font-family: var(--font-serif);
+  font-size: var(--fs-title);
+}
+
+.page-desc {
+  margin-bottom: 0;
+  font-size: var(--fs-detail);
+  text-align: center;
+  width: 60%;
+  min-width: 300px;
+  margin: 0 auto;
+}
+
+/* Books */
+.page-main {
+  width: 55%;
+  min-width: 600px;
+  margin: 0 auto;
+}
+
+.btn--add {
+  border: none;
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  padding: 4px 12px;
+  font-size: var(--fs-detail);
+  margin-top: 36px;
+  cursor: pointer;
+}
+
+.btn--add:hover {
+  opacity: 0.8;
+}
+
+.book-list {
+  margin: 24px 0 0 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.book {
+  margin-bottom: 48px;
+}
+
+.book__thumbnail {
+  float: right;
+  width: calc(100% / 6);
+}
+
+.book__title {
+  margin: 0;
+  font-size: var(--fs-heading);
+  font-family: var(--font-serif);
+
+}
+
+.book__author {
+  margin: 0;
+  font-style: italic;
+}
+
+.book__details {
+  margin: 8px 0;
+  font-size: var(--fs-detail);
+
+}
+
+.book__links a {
+  color: var(--color-accent);
+  margin-right: 8px;
+}
+
+.book__btn--delete {
+  color: var(--color-danger);
+  background-color: transparent;
+  border: 1px solid var(--color-danger);
+  border-radius: 999px;
+  padding: 2px 12px;
+  margin-top: 8px;
+  font-size: var(--fs-detail);
+  cursor: pointer;
+  transition: font-weight .1s ease;
+}
+
+.book__btn--delete:hover {
+  font-weight: bold;
+  border-width: 2px;
+}
