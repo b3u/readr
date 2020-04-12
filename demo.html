@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Readr</title>
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/normalize.css@latest">
+    <link rel="stylesheet" href="css/style.min.css">
+    <script defer src="js/index.js"></script>
+</head>
+<body>
+    <header class="page-header">
+        <nav class="nav">
+            <a href="/" class="logo">
+                <img src="assets/logo.svg" alt="Readr" height="50" />
+            </a>
+            <ul class="nav-links">
+                <li class="nav__link"><a href="#">Explore</a></li>
+                <li class="nav__link"><a href="#">My List</a></li>
+                <li class="nav__link"><a href="#">Account</a></li>
+            </ul>
+        </nav>
+        <h1 class="page-title">Binyamin's Reading List</h1>
+        <p class="page-desc">This book was chosen by The Original Manchester Book Group for discussion at our February 2020 meeting. This was selected from the genre "Medicine".</p>
+    </header>
+    <main class="page-main">
+        <ol start="0" id="bookList" class="book-list"></ol>
+        <button class="btn--add" aria-label="Add a book">
+            <span role="img">&plus;</span>
+        </button>
+        <template id="book-template">
+            <li class="book">
+                <img class="book__thumbnail" src="http://books.google.com/books/content?id=s8cYKqQba9wC&printsec=frontcover&img=1&zoom=3&imgtk=AFLRE71PwdWw6266zFgtZrByXaCVRJUxuu391M8Pl0iSgVm9LnNb3ShoOsdpbeEMZRzdpf2bXj2EnnNGCkW6ecI47Ytcvyxsnso92J4Y566Ox2y6D0xAPZ5I2T1fZjHPdWvST-c57Yp2&source=gbs_api" alt="">
+                <h2 class="book__title">Harry Potter and the Philosopher's Stone</h2>
+                <p class="book__author">By Joanne Kathleen "Jo" Rowling</p>
+                <p class="book__details"><small>405 pages &bull; 4.5/5 (Goodreads)</small></p>
+                <p class="book__desc">Book five of The Chronicles of Narnia continues the saga of C.S. Lewis's beloved land of fantastic creatures and unlikely heroes. Readers of any age will be entranced as the crew of the Dawn Treader approaches the "Worlds End."</p>
+                <div class="book__buttons">
+                    <a href="#" class="btn">Purchase It</a>
+                    <a href="#" class="btn">Borrow It</a>
+                    <button class="btn--delete">
+                        <img src="assets/trashcan.svg" alt="">
+                        Delete
+                    </button>
+                </div>
+            </li>
+        </template>
+    </main>
+    <footer class="page-footer">
+        <small>Copyright 2020 <a href="https://binyam.in">Binyamin Green</a></small>
+    </footer>
+</body>
+</html>

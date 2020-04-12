@@ -6,7 +6,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const postcss = require('gulp-postcss')
 
 const css = cb => {
-    gulp.src('./css/style.scss')
+    gulp.src('./scss/main.scss')
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(rename('style.min.css'))
@@ -27,8 +27,8 @@ const serve = cb => {
         port: 8080
     })
     
-    gulp.watch('./css/**/*.scss', css);
-    gulp.watch('index.html').on('change', browserSync.reload);
+    gulp.watch('./scss/**/*.scss', css).on('change', browserSync.reload);
+    gulp.watch('*.html').on('change', browserSync.reload);
     gulp.watch('./js/**/*.js').on('change', browserSync.reload);
     cb();
 }

@@ -1,0 +1,33 @@
+.button--white-outline {
+    text-decoration: none;
+    line-height: normal;
+    padding: 8px 24px;
+    color: $clr-white;
+    background: transparent;
+    border: 1.5px solid $clr-white;
+    border-radius: 999px;
+    margin: 0 12px;
+    
+    transition: border-radius .3s ease-in-out;
+    
+    &:hover {
+        border-radius: 8px;
+    }
+}
+
+.button--white {
+    text-decoration: none;
+    line-height: normal;
+    padding: 8px 24px;
+    color: $clr-accent;
+    background-color: $clr-white;
+    border: 1.5px solid $clr-white;
+    border-radius: 999px;
+    margin: 0 12px;
+    
+    transition: border-radius .3s ease-in-out;
+    
+    &:hover {
+        border-radius: 8px;
+    }
+}

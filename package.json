@@ -3,11 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "description": "",
-  "main": "index.js",
   "scripts": {
     "watch": "gulp",
-    "compile": "gulp pack",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile": "gulp pack"
   },
   "repository": {
     "type": "git",
