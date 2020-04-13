@@ -1,0 +1,27 @@
+block head
+    if page_title
+        - var meta_title = `${page_title} | ${site_title}`
+    else
+        - var meta_title = site_tagline
+    - var meta_desc = page_desc ? page_desc : site_desc
+    - var meta_img = "https://readr.binyam.in/assets/tw-image.png"
+
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="shortcut icon", href="assets/favicon.ico", type="image/x-icon")
+    title= meta_title
+    meta(name="description", content=meta_desc)
+
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Merriweather:wght@400;700&display=swap")
+    link(rel="stylesheet", href="https://unpkg.com/normalize.css@latest")
+    link(rel="stylesheet", href="css/style.min.css")
+
+    script(defer, src="js/index.js")
+
+    meta(property="og:title" content=meta_title)
+    meta(property="og:type" content="website")
+    //- meta(property="og:url" content=meta_url)
+    meta(property="og:image" content=meta_img)
+    meta(property="og:description" content=meta_desc)
+
+    //- link(rel="canonical", href=meta_url)
