@@ -25,7 +25,8 @@ main {
   justify-content: space-between;
 }
 
-.logo img {
+.logo img, .logo svg {
+  fill: $clr-white;
   height: 36px;
 }
 
