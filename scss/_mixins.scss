@@ -1,0 +1,11 @@
+@mixin sr-only {
+    // Only Show to Screen Readers
+    // (Code from Scott O'Hara <https://scottohara.me>)
+    position: absolute !important;
+    height: 1px; 
+    width: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0); 
+    clip-path: inset(50%);
+    white-space: nowrap; /* added line */
+}

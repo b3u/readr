@@ -1,13 +1,36 @@
+// Basics
 @import "typography";
 @import "colors";
+@import "mixins";
 
-@import "hero";
+// Atoms
 @import "button";
+
+// Molecules
+@import "nav";
+
+// Organisms
+@import "hero";
 
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  &:hover {
+    text-decoration: none;
+  }
+  &:focus {
+    background-color: rgba(255,255,255,0.2);
+  }
+}
+
+.sr-only {
+  @include sr-only();
 }
 
 main {
@@ -19,136 +42,54 @@ main {
   color: $clr-white;
 }
 
-.nav {
-  padding: 12px 24px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.logo img, .logo svg {
-  fill: $clr-white;
-  height: 36px;
-}
-
-.nav-links {
-  list-style-type: none;
-  display: block;
-}
-
-.nav__link {
-  display: inline-block;
-  margin: 0 8px;
-}
-
-.nav__link a {
-  color: $clr-white;
-  text-decoration: none;
-  transition: font-weight 0.1s ease;
-  
-  &:hover {
-    font-weight: bold;
-  }
-}
-
-.page-title {
-  text-align: center;
-  margin: 0 0 4px 0;
-  // font-size: $fs-h2;
-}
-
-.page-desc {
-  margin-bottom: 0;
-  text-align: center;
-  width: 60%;
-  min-width: 300px;
-  margin: 0 auto;
-}
-
-/* Books */
-.page-main {
-  width: 55%;
-  min-width: 600px;
-  margin: 0 auto;
-}
-
-.book-list {
-  margin: 24px 0 0 0;
-  padding: 0;
-  list-style-type: none;
-}
-
-.book {
-  margin-bottom: 48px;
-}
-
-.book__thumbnail {
-  float: right;
-  width: calc(100% / 6); /* 1/6 of container's width*/
-}
-
-.book__title {
-  margin: 0;
-  font-size: $fs-h4;
-}
-
-.book__author {
-  margin: 0;
-  font-style: italic;
-}
-
-.book__details {
-  margin: 8px 0;
-  font-size: $fs-small;
-}
-
-.book__links a {
-  color: $clr-accent;
-  margin-right: 8px;
-}
-
-.book__btn--delete {
-  color: $clr-danger;
-  background-color: transparent;
-  border: 1px solid $clr-danger;
-  border-radius: 999px;
-  padding: 2px 12px;
-  margin-top: 8px;
-  font-size: $fs-small;
-  cursor: pointer;
-  transition: font-weight .1s ease;
-}
-
-.book__btn--delete:hover {
-  font-weight: bold;
-  border-width: 2px;
-}
-
-.page-footer {
+[class^=page-footer] {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
+  grid-template-areas: ". b c";
+  row-gap: 4px;
+  margin-bottom: 4px;
+}
+
+.page-footer--light {
+  color: $clr-white;
+  fill: $clr-white;
 }
 
 .footer-copyright {
   margin: 0;
-  color: $clr-white;
-  grid-column: 2/3;
+  grid-area: b;
   place-self: center;
-  
-  a {
-    color: $clr-white;
-  }
+  text-align: center;
 }
 
 .footer-links {
-  margin: 0 24px 0 0;
+  grid-area: c;
+  place-self: end;
+
+  margin: 0 24px;
   padding: 0;
   list-style-type: none;
+  
   display: flex;
-  place-self: end;
   justify-content: center;
   align-items: center;
 
   li {
     margin: 0 12px;
+    
+    a {
+      display: block;
+      line-height: normal;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  [class^=page-footer] {
+    grid-template-areas: "b b b" "c c c";
+  }
+
+  .footer-links {
+    justify-self: center;
   }
 }

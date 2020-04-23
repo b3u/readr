@@ -1,0 +1,16 @@
+block nav
+    nav.nav
+        a(href="/", aria-label="Home").logo
+            include ../../assets/logo.svg
+        //- Toggle `aria-expanded` on click
+        button#burger.burger(aria-expanded="false", aria-controls="menu")
+            div(role="img", aria-label="Menu")
+                span.burger-bar
+                span.burger-bar
+                span.burger-bar
+        ul.menu#menu
+            li.menu__link: a(href="#") Sign Up
+            li.menu__link: a(href="#") Log In
+            //- li.menu__link: a(href="#") My List
+            //- li.menu__link: a(href="#") Add Book
+            li.menu__link: a(href="#") Help #[small (soon)]

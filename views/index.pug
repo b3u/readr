@@ -1,11 +1,12 @@
 extends layouts/default
 
 block content
-    include includes/header
+    include includes/nav
     main.hero
         h1.hero-title Curate and share your reading list
         p.hero-lead 📚️ Maintain a full reading list. Share it with friends, so everyone can take suggestions.
         .hero-buttons
-            a.button--white(href="https://twitter.com/readrlist" rel="external noreferrer") Stay Updated
-            a.button--white-outline(href="mailto:binyamingreen@protonmail.com?subject=Readr%20Is%20Stupid") This is stupid 🤔️
+            a.button--white(href="#") Get Started
+            a.button--white-outline(href="/demo.html") Show Me
+    - var lightFooter = true
     include includes/footer

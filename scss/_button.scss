@@ -1,33 +1,46 @@
-.button--white-outline {
+[class^=button] {
     text-decoration: none;
     line-height: normal;
     padding: 8px 24px;
-    color: $clr-white;
-    background: transparent;
-    border: 1.5px solid $clr-white;
     border-radius: 999px;
     margin: 0 12px;
-    
-    transition: border-radius .3s ease-in-out;
-    
-    &:hover {
-        border-radius: 8px;
-    }
-}
+    border-width: 1.5px;
+    border-style: solid;
 
-.button--white {
-    text-decoration: none;
-    line-height: normal;
-    padding: 8px 24px;
-    color: $clr-accent;
-    background-color: $clr-white;
-    border: 1.5px solid $clr-white;
-    border-radius: 999px;
-    margin: 0 12px;
+    transition: border-radius 300ms ease;
     
-    transition: border-radius .3s ease-in-out;
+    &:hover, &:focus {
+        border-radius:4px;
+    }
     
-    &:hover {
-        border-radius: 8px;
+    &[class*=-white] {
+        color: $clr-accent;
+        fill: $clr-accent;
+        border-color: $clr-white;
+        background-color: $clr-white;
+    }
+
+    &[class$=-white-outline] {
+        background: transparent;
+        color: $clr-white;
+    }
+
+    &[class*=-icon] {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &[class*=-clear] {
+        border-style: none;
+        padding: 4px 12px;
+        border-radius: 4px;
+
+        transition: background-color 300ms ease;
+
+        &:hover, &:focus {
+            border-radius: 4px;
+            background-color: rgba(255,255,255,0.2);
+        }
     }
 }

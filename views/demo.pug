@@ -4,25 +4,20 @@ append variables
     - var page_title = "Binyamin's Reading List"
 
 block content
-    header.page-header
-        include includes/header
-        h1.page-title Binyamin's Reading List
-        p.page-desc O for awesome, this chocka full cuzzie is as rip-off as a cracker. Meanwhile, in behind the bicycle shed, Hercules Morse, as big as a horse.
-    main.page-main
-        ol#bookList.book-List
-        button(aria-label="Add a book").btn--Add
-            span(role="img") &plus;
-        template#book-template
-            li.book
+    include includes/header
+    main.page-main#bookWrap
+        mixin book
+            section.book
                 img.book__thumbnail(src="assets/cover.jpeg", alt="")
                 h2.book__title Harry Potter and the Philosopher's Stone
                 p.book__author By Joanne Kathleen "Jo" Rowling
-                p.book__details: small 405 pages &bull; 4.5/5 (Goodreads)
+                p.book__details 405 pages &bull; 4.5/5 (Goodreads)
                 p.book__desc Book five of The Chronicles of Narnia continues the saga of C.S. Lewis's beloved land of fantastic creatures and unlikely heroes. Readers of any age will be entranced as the crew of the Dawn Treader approaches the "Worlds End."
-                .book__buttons
-                    a.btn(href="#") Purchase It
-                    a.btn(href="#") Borrow It
-                    button.btn--delete
-                        include ../assets/icons/trashcan.svg
-                        span Delete
+                details.actions
+                    summary Actions
+                    ul
+                        li: a(href="#") Buy
+                        li: a(href="#", role="button") Share
+                        //- li: a(href="#", role="button") Delete
+        +book
     include includes/footer

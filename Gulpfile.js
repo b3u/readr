@@ -31,9 +31,16 @@ const html = cb => {
     cb();
 }
 
+const js = cb => {
+    gulp.src("./js/**/*.js")
+    .pipe(gulp.dest("./dist/js"))
+    .pipe(browserSync.stream());
+    cb();
+}
+
 const static = cb => {
-    gulp.src("./?(js|assets)/**/*.*")
-    .pipe(gulp.dest("./dist"))
+    gulp.src("./assets/**/*.*")
+    .pipe(gulp.dest("./dist/assets"))
     .pipe(browserSync.stream());
     cb();
 }
@@ -52,7 +59,8 @@ const serve = cb => {
     
     gulp.watch('./scss/**/*.scss', css).on('change', browserSync.reload);
     gulp.watch('./views/**/*.pug', html).on('change', browserSync.reload);
-    gulp.watch('./?(js|assets)/**/*.*', static).on('change', browserSync.reload);
+    gulp.watch('./js/**/*.js', js).on('change', browserSync.reload);
+    gulp.watch('./assets/**/*.*', static).on('change', browserSync.reload);
     cb();
 }
 
